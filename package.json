@@ -4,7 +4,7 @@
     "description": "A simple extension for syntax highlighting of BHASVIC's pseudocode standard.",
     "publisher": "davwheat",
     "icon": "images/icon.png",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "engines": {
         "vscode": "^1.55.0"
     },
