@@ -18,6 +18,7 @@ export class Config {
 
     /**
      * Constructor for {@link Config}
+     * 
      * @param callback - The callback for whatever instantiated {@link Config} to continue in after the config file has been loaded
      */
     constructor(callback: () => void) {
@@ -25,8 +26,9 @@ export class Config {
         this.findConfigFile(callback);
     }
 
-    /** Finds the config file with the highest priority
-     * (currently only supports config file in home directory)
+    /** 
+     * Finds the config file with the highest priority (currently only supports config file in home directory)
+     * 
      * @param callback - The callback for whatever instantiated {@link Config} to continue in after the config file has been loaded
      */
     findConfigFile(callback: () => void): void {

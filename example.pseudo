@@ -1,58 +1,95 @@
-
-
-set x = 1
-if x == 1 do
+x = 1
+if x == 1 then
     print "x = 1"
-end else do
+else if x == 2 then
     print "x != 1"
-end
+end if
 
-set y = 1
-while y <= 10 do
-    print y
+// -------------
+
+y = 2
+while y <= 10
+    OUTPUT y
     y++
-end
+end while
 
-for (set i = 1; i <= 10; i++) do
+// -------------
+
+for i = 1 to 10
     print i
-end
+next i
 
-foreach (i in iterable) do
+// -------------
+
+foreach (i in iterable)
     print i
-end
+next i
 
-set a = "x"
-switch(a) do
+// -------------
+
+a = "x"
+switch a
     case "x":
         print "a = 'x'"
         break
     case "y":
         print "a = 'y'"
         break
-end
+end switch
 
-try do
+// -------------
+
+try
     MakeError()
-end catch(err) do
+catch (err)
     print err
-end
+end try
 
-function Add(a, b) do
+// -------------
+
+function Add(a, b)
     return a + b
-end
+end function
 
-procedure HelloWorld() do
+function add() {
+    return 1 + 2
+}
+
+// -------------
+
+procedure HelloWorld()
+print "Hello World"
+end procedure
+
+subroutine HelloWorld()
     print "Hello World"
-end
+end subroutine
 
-class A do
-    constructor() do
-        print "Constructed"
-    end
-end
+// -------------
 
-class A extends B do
-    constructor() do
+class A
+    procedure new()
         print "Constructed"
-    end
-end
+    end procedure
+end class
+
+class A extends B
+    procedure new()
+        print "Constructed"
+    end procedure
+end class
+
+public abstract class A extends B
+    public procedure new()
+        print "Constructed"
+    end procedure
+
+    private static procedure HelloWorld()
+        output "Hello World"
+    end procedure
+
+    readonly protected x = "11"
+
+    abstract function x(num, poo, lol)
+      return num
+    end function
