@@ -48,35 +48,35 @@
 		"keywords": {
 			"patterns": [
 				{
-					"name": "keyword.control.generic",
-					"match": "(?i)\\b(then|end|generic)\\b"
+					"name": "keyword.control.generic.pseudocode",
+					"match": "(?i)\\b(then|end|return)\\b"
 				},
 				{
-					"name": "keyword.control.branching",
+					"name": "keyword.control.branching.pseudocode",
 					"match": "(?i)\\b(if|else|switch|case|default)\\b"
 				},
 				{
-					"name": "keyword.control.io",
+					"name": "keyword.control.io.pseudocode",
 					"match": "(?i)\\b(output|input|print)\\b"
 				},
 				{
-					"name": "keyword.control.exception-handling",
+					"name": "keyword.control.exception-handling.pseudocode",
 					"match": "(?i)\\b(try|catch|throw)\\b"
 				},
 				{
-					"name": "keyword.control.access-modifiers",
+					"name": "keyword.control.access-modifiers.pseudocode",
 					"match": "(?i)\\b(const|public|private|static|protected|readonly|abstract)\\b"
 				},
 				{
-					"name": "keyword.control.iteration",
+					"name": "keyword.control.iteration.pseudocode",
 					"match": "(?i)\\b(while|for|to|in|foreach|next|do|repeat|until|break|continue)\\b"
 				},
 				{
-					"name": "keyword.control.class",
+					"name": "keyword.control.class.pseudocode",
 					"match": "(?i)\\b(class|inherits|extends|new)\\b"
 				},
 				{
-					"name": "keyword.control.imports",
+					"name": "keyword.control.imports.pseudocode",
 					"match": "(?i)\\b(import|export)\\b"
 				},
 				{
@@ -84,8 +84,8 @@
 					"match": "(?i)\\b(and|or|not|!|&&|\\|\\||in)\\b"
 				},
 				{
-					"name": "keyword.operator.arithmetic",
-					"match": "(?i)\\b(\\*|\\/|\\+|\\-|MOD|DIV|\\^)\\b"
+					"name": "keyword.others.pseudocode",
+					"match": "\\b(MOD|DIV)\\b"
 				},
 				{
 					"name": "keyword.declaration.function.pseudocode",
@@ -115,7 +115,7 @@
 				{
 					"name": "meta.function.pseudocode",
 					"begin": "(?i)\\b(private |public | protected)?(static |abstract )?((function|procedure|subroutine)) ([a-zA-Z_][a-zA-Z0-9_]*)\\((.*?)\\) *(?:\\{)?",
-					"end": "(?i)(?:\\}|(end))",
+					"end": "(?i)(?:\\}|(end (?:function|procedure|subroutine)))",
 					"beginCaptures": {
 						"1": {
 							"name": "storage.modifier.pseudocode"
@@ -177,7 +177,7 @@
 				{
 					"name": "meta.class.pseudocode",
 					"begin": "(?i)\\b(private |public )?(abstract |static )*((class)) ([a-zA-Z_][a-zA-Z0-9_]*) *(?:(extends|inherits) *([a-zA-Z_][a-zA-Z0-9_]*))? *(?:\\{|(do))?",
-					"end": "(?i)(?:\\}|(end))",
+					"end": "(?i)(?:\\}|(end class))",
 					"beginCaptures": {
 						"1": {
 							"name": "storage.modifier.pseudocode"
@@ -242,7 +242,7 @@
 				{
 					"name": "meta.struct.pseudocode",
 					"begin": "(?i)\\b(private |public |protected )?(static )*((struct)) ([a-zA-Z_][a-zA-Z0-9_]*) *(?:\\{|(do))?",
-					"end": "(?i)(?:\\}|(end))",
+					"end": "(?i)(?:\\}|(end struct))",
 					"beginCaptures": {
 						"1": {
 							"name": "storage.modifier.pseudocode"

@@ -1,3 +1,19 @@
+
+
+# ----------
+
+x = 4 MOD 13
+y = 2 DIV 3
+z = 2 ^ 3
+
+if x == true and y == false or z == true then
+    // do something
+end if
+
+x = not x
+
+/* --------- */
+
 x = 1
 if x == 1 then
     print "x = 1"
@@ -58,7 +74,7 @@ function add() {
 // -------------
 
 procedure HelloWorld()
-print "Hello World"
+    print "Hello World"
 end procedure
 
 subroutine HelloWorld()
@@ -93,3 +109,4 @@ public abstract class A extends B
     abstract function x(num, poo, lol)
       return num
     end function
+end class
