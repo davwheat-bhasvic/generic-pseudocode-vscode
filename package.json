@@ -1,7 +1,7 @@
 {
     "name": "bhasvic-pseudocode",
-    "displayName": "BHASVIC Pseudocode",
-    "description": "A simple extension for syntax highlighting of BHASVIC's pseudocode standard.",
+    "displayName": "BHASVIC pseudocode highlighting",
+    "description": "A simple extension for syntax highlighting compliant with various pseudocode standards.",
     "publisher": "davwheat",
     "icon": "images/icon.png",
     "version": "0.0.2",
@@ -40,18 +40,15 @@
             }
         ]
     },
-    "activationEvents": [
-        "onLanguage:pseudocode"
-    ],
     "main": "./out/extension.js",
     "repository": {
         "type": "git",
         "url": "https://github.com/davwheat-bhasvic/generic-pseudocode-vscode.git"
     },
     "devDependencies": {
-        "@types/node": "^16.7.10",
-        "@types/vscode": "^1.55.0",
-        "typescript": "^4.4.2"
+        "@types/node": "^16.18.25",
+        "@types/vscode": "^1.77.0",
+        "typescript": "^4.9.5"
     },
-    "dependencies": {}
+    "packageManager": "yarn@3.5.0"
 }
