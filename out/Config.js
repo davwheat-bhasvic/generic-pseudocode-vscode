@@ -1,7 +1,11 @@
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
 }) : (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     o[k2] = m[k];
@@ -28,26 +32,30 @@ const fs_1 = require("fs");
  * Config class which handles the .pseudoconfig file in the home directory
  */
 class Config {
+    /** Stores the config file in JSON format */
+    _config;
+    /** Read-only access to the config file in JSON format */
+    get config() {
+        return this._config;
+    }
     /**
      * Constructor for {@link Config}
+     *
      * @param callback - The callback for whatever instantiated {@link Config} to continue in after the config file has been loaded
      */
     constructor(callback) {
         this._config = {};
         this.findConfigFile(callback);
     }
-    /** Read-only access to the config file in JSON format */
-    get config() {
-        return this._config;
-    }
-    /** Finds the config file with the highest priority
-     * (currently only supports config file in home directory)
+    /**
+     * Finds the config file with the highest priority (currently only supports config file in home directory)
+     *
      * @param callback - The callback for whatever instantiated {@link Config} to continue in after the config file has been loaded
      */
     findConfigFile(callback) {
-        var homeDirectory = os_1.homedir();
+        var homeDirectory = (0, os_1.homedir)();
         console.log(homeDirectory);
-        var homeDirFile = path_1.join(homeDirectory, ".pseudoconfig");
+        var homeDirFile = (0, path_1.join)(homeDirectory, ".pseudoconfig");
         console.log("Home Dir File", homeDirFile);
         console.log(vscode.workspace.workspaceFolders);
         fs_1.promises.readFile(homeDirFile)
