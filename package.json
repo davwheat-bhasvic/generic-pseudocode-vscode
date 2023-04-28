@@ -4,7 +4,7 @@
     "description": "A simple extension for syntax highlighting compliant with various pseudocode standards.",
     "publisher": "davwheat",
     "icon": "images/icon.png",
-    "version": "0.0.2",
+    "version": "1.0.0",
     "engines": {
         "vscode": "^1.55.0"
     },
