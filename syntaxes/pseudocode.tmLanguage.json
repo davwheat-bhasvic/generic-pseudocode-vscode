@@ -53,7 +53,7 @@
         },
         {
           "name": "keyword.control.branching.pseudocode",
-          "match": "(?i)\\b(if|else|switch|case|default)\\b"
+          "match": "(?i)\\b((end ?)?(if|switch)|(else|case|default))\\b"
         },
         {
           "name": "keyword.control.io.pseudocode",
@@ -61,7 +61,7 @@
         },
         {
           "name": "keyword.control.exception-handling.pseudocode",
-          "match": "(?i)\\b(try|catch|throw)\\b"
+          "match": "(?i)\\b(((end ?)?try)|(catch|throw))\\b"
         },
         {
           "name": "keyword.control.access-modifiers.pseudocode",
@@ -89,15 +89,15 @@
         },
         {
           "name": "keyword.declaration.function.pseudocode",
-          "match": "(?i)\\b(function|procedure|subroutine)\\b"
+          "match": "(?i)\\b(end ?)?(function|procedure|subroutine)\\b"
         },
         {
           "name": "keyword.declaration.class.pseudocode",
-          "match": "(?i)\\bclass\\b"
+          "match": "(?i)\\b(end ?)?class\\b"
         },
         {
           "name": "keyword.declaration.struct.pseudocode",
-          "match": "(?i)\\bstruct\\b"
+          "match": "(?i)\\b(end ?)?struct\\b"
         },
         {
           "name": "meta.function-call.pseudocode",
@@ -115,7 +115,7 @@
         {
           "name": "meta.function.pseudocode",
           "begin": "(?i)\\b(private |public | protected)?(static |abstract )?((function|procedure|subroutine)) ([a-zA-Z_][a-zA-Z0-9_]*)\\((.*?)\\) *(?:\\{)?",
-          "end": "(?i)(?:\\}|(end (?:function|procedure|subroutine)))",
+          "end": "(?i)(?:\\}|(end ?(?:function|procedure|subroutine)))",
           "beginCaptures": {
             "1": {
               "name": "storage.modifier.pseudocode"
@@ -177,7 +177,7 @@
         {
           "name": "meta.class.pseudocode",
           "begin": "(?i)\\b(private |public )?(abstract |static )*((class)) ([a-zA-Z_][a-zA-Z0-9_]*) *(?:(extends|inherits) *([a-zA-Z_][a-zA-Z0-9_]*))? *(?:\\{|(do))?",
-          "end": "(?i)(?:\\}|(end class))",
+          "end": "(?i)(?:\\}|(end ?class))",
           "beginCaptures": {
             "1": {
               "name": "storage.modifier.pseudocode"
@@ -245,7 +245,7 @@
         {
           "name": "meta.struct.pseudocode",
           "begin": "(?i)\\b(private |public |protected )?(static )*((struct)) ([a-zA-Z_][a-zA-Z0-9_]*) *(?:\\{|(do))?",
-          "end": "(?i)(?:\\}|(end struct))",
+          "end": "(?i)(?:\\}|(end ?struct))",
           "beginCaptures": {
             "1": {
               "name": "storage.modifier.pseudocode"
